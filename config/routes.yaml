@@ -1,0 +1,5 @@
+survos_bing_news:
+  type: attribute
+  resource:
+    path: '@SurvosBingNewsBundle/src/Controller/'
+    namespace: Survos\BingNewsBundle\Controller

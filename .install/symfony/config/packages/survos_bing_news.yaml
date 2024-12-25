@@ -1,0 +1,4 @@
+survos_bing_news:
+  api_key: '%env(BING_NEWS_API_KEY)%'
+  endpoint: '%env(BING_NEWS_ENDPOINT)%'
+  cache_timeout: 7200
