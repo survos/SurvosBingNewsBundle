@@ -2,10 +2,12 @@
 
 namespace Survos\BingNewsBundle\Controller;
 
+use BingNewsSearch\Structs\NewsAnswer;
 use Survos\BingNewsBundle\Form\SearchFormType;
 use Survos\BingNewsBundle\Service\BingNewsService;
 use Symfony\Bridge\Twig\Attribute\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\DependencyInjection\Attribute\Autowire;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Attribute\MapQueryParameter;
@@ -31,10 +33,10 @@ class BingNewsController extends AbstractController
 //    #[Template('@SurvosBingNews/search.html.twig')]
     public function search(
         Request $request,
+        #[Autowire('%kernel.project_dir%/')] string $projectDir,
         #[MapQueryParameter] ?string $q=null
     ): Response|array
     {
-
         $defaults  = [
             'q' => $q
         ];
@@ -47,9 +49,18 @@ class BingNewsController extends AbstractController
             $redirect =  $this->redirectToRoute('survos_bing_news_search', ['q' => $form->getData()['q']]);
             return $redirect;
         }
+
+//        $data = json_decode(file_get_contents($projectDir . 'laws.json'), true);
+//        $newsAnswer = new NewsAnswer(...$data);
+//        return $this->render('@SurvosBingNews/search.html.twig', [
+//            'newsAnswer' => $newsAnswer,
+//            'searchForm' => $form->createView(),
+//        ]);
+//        dd($newsAnswer->getValue(), $newsAnswer->getNews(), $newsAnswer->getTotalEstimatedMatches());
+
         $news = $q ? $this->bingNewsService->searchByKeyword($q) : [];
             return $this->render('@SurvosBingNews/search.html.twig', [
-                'news' => $news,
+                'newsAnswer' => $news,
                 'searchForm' => $form->createView(),
             ]);
             // a nice search form

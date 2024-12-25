@@ -2,6 +2,8 @@
 
 namespace Survos\BingNewsBundle\Command;
 
+use Psr\EventDispatcher\EventDispatcherInterface;
+use Survos\BingNewsBundle\Event\RowEvent;
 use Survos\BingNewsBundle\Service\BingNewsService;
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Helper\Table;
@@ -20,6 +22,7 @@ final class BingNewsListCommand extends InvokableServiceCommand
 
     public function __construct(
         private readonly BingNewsService $bingNewsService,
+        private EventDispatcherInterface $eventDispatcher,
     )
     {
         parent::__construct();
@@ -27,29 +30,31 @@ final class BingNewsListCommand extends InvokableServiceCommand
 
     public function __invoke(
         IO                                                                                          $io,
-        #[Argument(description: 'endpoint (source, search)')] string        $endpoint='',
         #[Option(description: 'filter by top')] bool $top = false,
         #[Option(description: 'search string')] ?string $q=null,
         #[Option(description: '2-letter language code')] string $locale='en',
+        #[Option(description: 'max to return')] int $limit = 100,
 
     ): int
     {
         if ($q) {
-            $query = $this->bingNewsService->contentApi()
-                ->setQuery($q);
-            $response = $this->bingNewsService->fetch($query);
+            $news = $this->bingNewsService->searchByKeyword($q, $limit);
 
             $table = new Table($io);
             $table->setHeaderTitle($q);
-            $headers = ['Title', 'Url'];
+            $headers = ['id', 'Title'];
             $table->setHeaders($headers);
-            foreach ($response->results as $rowData) {
+            $event = $this->eventDispatcher->dispatch(new RowEvent(type: RowEvent::PRE_ITERATE));
+            foreach ($news->getValue() as $article) {
+                $event = $this->eventDispatcher->dispatch(new RowEvent($article));
+
                 $row = [
-                    $rowData->webTitle,
-                    $rowData->webUrl,
+                    $article->getId(),
+                    $article->getName(),
                 ];
                 $table->addRow($row);
             }
+            $event = $this->eventDispatcher->dispatch(new RowEvent(type: RowEvent::POST_LOAD));
             $table->render();
         }
         return self::SUCCESS;

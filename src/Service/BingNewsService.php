@@ -10,8 +10,10 @@ use BingNewsSearch\Client;
 use BingNewsSearch\Enum\Category;
 use BingNewsSearch\Enum\Language;
 use BingNewsSearch\Enum\SafeSearch;
+use BingNewsSearch\Enum\SortBy;
 use BingNewsSearch\Requests\Request;
 use BingNewsSearch\Requests\Search\Get;
+use BingNewsSearch\Structs\NewsAnswer;
 use GuzzleHttp\RequestOptions;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\Cache\CacheItem;
@@ -31,7 +33,7 @@ class BingNewsService
         private ?CacheInterface $cache = null,
     )
     {
-        $this->client = new Client($this->endpoint, $this->apiKey);
+        $this->client = new Client($this->endpoint, $this->apiKey, cache: $cache);
         $this->client->enableExceptions(); // throw exceptions for debug
         $this->client->disableSsl(); // disable Guzzle verification SSL
     }
@@ -44,15 +46,14 @@ class BingNewsService
         return $this->cachedSearch($query);
     }
 
-    private function cachedSearch(Request $query): iterable
+    private function cachedSearch(Request $query)
     {
-        $request = $query->request();
-        dump($request);
+        return $query->getApiClient()->request($query);
         $key = hash('xxh3', serialize($query->getQuery()));
         $news = $this->cache->get($key, function (ItemInterface $item) use ($query) {
             $item->expiresAfter($this->cacheTimeout);
             $request = $query->request();
-            return $request->getNews();
+            return $request;
         });
 
         return $news;
@@ -60,11 +61,12 @@ class BingNewsService
 
     }
 
-    public function searchByKeyword(?string $keyword = null): iterable
+    public function searchByKeyword(?string $keyword = null, $quantity=100): NewsAnswer
     {
         $query = $this->client->search()
             ->get($keyword)
-            ->setQuantity(50);
+            ->sortBy(SortBy::DATE())
+            ->setQuantity($quantity);
         return $this->cachedSearch($query);
     }
 

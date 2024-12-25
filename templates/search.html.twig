@@ -6,27 +6,31 @@
     {{ form(searchForm) }}
     {% endif %}
 
-    {{ dump(news[0]|default('~')) }}
+    <h1>{{ newsAnswer.queryContext.originalQuery }}</h1>
+    <i>{{ newsAnswer.totalEstimatedMatches }} hits</i>
 
     {% set columns = [
         'image',
         'name',
-        'description',
+        'datePublished',
+        'provider',
+        'mentions',
+        'category',
         {name: 'dump', condition: app.request.get('debug', false)},
     ] %}
-    {% set articles = [] %}
+    {% set articles = newsAnswer.value %}
     <twig:simple_datatables
             perPage="25"
             :caller="_self"
             :columns="columns"
-            :data="news|default([])"
+            :data="articles|default([])"
     >
         <twig:block name="image">
             {% if row.image %}
-            <img src="{{ row.image.thumbnail().contentUrl() }}" alt="{{ row.id }}" style="max-width: 120px"/>
+            <img src="{{ row.image.thumbnail.contentUrl }}" alt="{{ row.name }}" style="max-width: 120px"/>
             {% endif %}
         </twig:block>
-        <twig:block name="publishedAt">
+        <twig:block name="datePublished">
             {% guard filter ago %}
                 {{ row.datePublished|ago }}
             {% else %}
@@ -34,9 +38,18 @@
                 {{ row.datePublished }}
             {% endguard %}
         </twig:block>
+        <twig:block name="mentions">
+            {{ dump(row.mentions) }}
+        </twig:block>
+        <twig:block name="provider">
+            {% for p in row.provider %}
+                {{ p._type }}
+                {{ p.name }}
+            {% endfor %}
+        </twig:block>
         <twig:block name="dump">
             {% guard function dump %}
-            {{ dump(row) }}
+                {{ dump(row) }}
             {% else %}
                 <pre>{{ row|json_encode }}</pre>
             {% endguard %}
@@ -46,8 +59,14 @@
                 {{ row.name }}
             </a>
             <br />
-{#            {{ row.description }}#}
+            {{ row.description }}
             <hr />
+            <br />
+            {% for about in row.about %}
+                <li>
+                    <span class="badgex badge-danger">{{ about.name }}</span>
+                </li>
+            {% endfor %}
 {#            <span class="danger">{{ row.sectionId }}</span>#}
         </twig:block>
 
