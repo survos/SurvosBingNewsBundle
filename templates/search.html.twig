@@ -6,30 +6,32 @@
     {{ form(searchForm) }}
     {% endif %}
 
-    {{ dump(articles[0]|default('~')) }}
+    {{ dump(news[0]|default('~')) }}
 
     {% set columns = [
         'image',
-        'title',
-        'publishedAt',
+        'name',
+        'description',
         {name: 'dump', condition: app.request.get('debug', false)},
     ] %}
-{#    {% set articles = [] %}#}
+    {% set articles = [] %}
     <twig:simple_datatables
             perPage="25"
             :caller="_self"
             :columns="columns"
-            :data="articles|default([])"
+            :data="news|default([])"
     >
         <twig:block name="image">
-            <img src="{{ row.fields.thumbnail }}" alt="{{ row.id }}" style="max-width: 120px"/>
+            {% if row.image %}
+            <img src="{{ row.image.thumbnail().contentUrl() }}" alt="{{ row.id }}" style="max-width: 120px"/>
+            {% endif %}
         </twig:block>
         <twig:block name="publishedAt">
             {% guard filter ago %}
-                {{ row.webPublicationDate|ago }}
+                {{ row.datePublished|ago }}
             {% else %}
                 install timeago!
-                {{ row.webPublicationDate }}
+                {{ row.datePublished }}
             {% endguard %}
         </twig:block>
         <twig:block name="dump">
@@ -39,14 +41,14 @@
                 <pre>{{ row|json_encode }}</pre>
             {% endguard %}
         </twig:block>
-        <twig:block name="title">
-            <a href="{{ row.webUrl }}" target="_blank">
-                {{ row.fields.headline }}
+        <twig:block name="name">
+            <a href="{{ row.url }}" target="_blank">
+                {{ row.name }}
             </a>
             <br />
 {#            {{ row.description }}#}
             <hr />
-            <span class="danger">{{ row.sectionId }}</span>
+{#            <span class="danger">{{ row.sectionId }}</span>#}
         </twig:block>
 
     </twig:simple_datatables>

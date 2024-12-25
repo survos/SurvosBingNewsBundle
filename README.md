@@ -13,10 +13,15 @@ composer require survos/bing-news-bundle
 composer config repositories.survos_bing_news_bundle '{"type": "path", "url": "../survos/packages/bing-news-bundle"}'
 composer req survos/bing-news-bundle:"*@dev"
 
+## Resources
+
+* https://portal.azure.com/#@tacmangmail.onmicrosoft.com/resource/subscriptions/2809ba0c-d042-49a8-a2f5-4363572b8c8a/resourceGroups/News/providers/Microsoft.Bing/accounts/BingNews/overview
+* 
 
 ## Installation
 
 Go to Microsoft Azure and get a key.
+
 
 Create a new Symfony project.
 

@@ -6,6 +6,7 @@ namespace Survos\BingNewsBundle;
 
 use Survos\BingNewsBundle\Command\BingNewsListCommand;
 use Survos\BingNewsBundle\Controller\BingNewsController;
+use Survos\BingNewsBundle\Form\SearchFormType;
 use Survos\BingNewsBundle\Service\BingNewsService;
 use Survos\BingNewsBundle\Twig\TwigExtension;
 use Survos\SimpleDatatables\SurvosSimpleDatatablesBundle;
@@ -30,11 +31,15 @@ class SurvosBingNewsBundle extends AbstractBundle
         $container->services()->alias(BingNewsService::class, $serviceId);
         $builder->autowire($serviceId, BingNewsService::class)
             ->setArgument('$apiKey', $config['api_key'])
-            ->setArgument('$apiEndpoint', $config['api_endpoint'])
+            ->setArgument('$endpoint', $config['endpoint'])
             ->setArgument('$cacheTimeout', $config['cache_timeout'])
             ->setAutoconfigured(true)
             ->setAutowired(true)
             ->setPublic(true);
+
+        $builder->autowire(SearchFormType::class)
+            ->setPublic(true)
+            ->setAutowired(true);
 
         $builder->autowire(BingNewsController::class)
             ->setArgument('$simpleDatatablesInstalled', $hasSimpleDatatables)
