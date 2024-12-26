@@ -1,0 +1,388 @@
+{
+  "_type": "News",
+  "readLink": "https:\/\/api.bing.microsoft.com\/api\/v7\/news\/search?q=tobacco+laws",
+  "queryContext": {
+    "originalQuery": "tobacco laws",
+    "adultIntent": false
+  },
+  "totalEstimatedMatches": 7480,
+  "sort": [
+    {
+      "name": "Best match",
+      "id": "relevance",
+      "isSelected": true,
+      "url": "https:\/\/api.bing.microsoft.com\/api\/v7\/news\/search?q=tobacco+laws"
+    },
+    {
+      "name": "Most recent",
+      "id": "date",
+      "isSelected": false,
+      "url": "https:\/\/api.bing.microsoft.com\/api\/v7\/news\/search?q=tobacco+laws&sortby=date"
+    }
+  ],
+  "value": [
+    {
+      "name": "Local smoke shop owners worried and concerned about flavored tobacco ban going into effect in 2025",
+      "url": "https:\/\/kesq.com\/news\/2024\/12\/17\/local-smoke-shop-owners-worried-and-concerned-about-flavored-tobacco-ban-going-into-effect-in-2025\/",
+      "image": {
+        "thumbnail": {
+          "contentUrl": "https:\/\/www.bing.com\/th?id=OVFT.aF32q_iaXm6vNEAqBjgdhi&pid=News",
+          "width": 700,
+          "height": 393
+        }
+      },
+      "description": "Proposition 31, which bans flavored tobacco products will officially go into effect in the new year. It’s already illegal for retailers to sell tobacco to anyone under 21. The ban doesn’t make it a crime to possess such products but retailers who sold them to kids could be fined up to $250.",
+      "about": [
+        {
+          "readLink": "https:\/\/api.bing.microsoft.com\/api\/v7\/entities\/23e0341f-aae4-13ee-d043-0e14d3960494",
+          "name": "Cigar"
+        }
+      ],
+      "provider": [
+        {
+          "_type": "Organization",
+          "name": "KESQ News",
+          "image": {
+            "thumbnail": {
+              "contentUrl": "https:\/\/www.bing.com\/th?id=ODF.qkNFLZ-M-DL_ePnQ2Q4djQ&pid=news"
+            }
+          }
+        }
+      ],
+      "datePublished": "2024-12-18T02:09:00.0000000Z",
+      "video": {
+        "name": "Local smoke shop owners worried and concerned about flavored tobacco ban going into effect in 2025",
+        "thumbnailUrl": "https:\/\/www.bing.com\/th?id=OVF.Zf7FjWObH80D9spHApXfCA&pid=News",
+        "thumbnail": {
+          "width": 520,
+          "height": 292
+        }
+      },
+      "category": "Health"
+    },
+    {
+      "name": "North Bergen tobacco sellers must seek local license under new law taking effect in 2025",
+      "url": "https:\/\/www.nj.com\/hudson\/2024\/12\/north-bergen-tobacco-sellers-must-seek-local-license-under-new-law-taking-effect-in-2025.html",
+      "image": {
+        "thumbnail": {
+          "contentUrl": "https:\/\/www.bing.com\/th?id=OVFT.DozYzUYq8ijpO_B91tzodi&pid=News",
+          "width": 700,
+          "height": 428
+        }
+      },
+      "description": "The new law is part of an effort to keep tobacco out of reach for anyone under age 21, the township said in a news release.",
+      "about": [
+        {
+          "readLink": "https:\/\/api.bing.microsoft.com\/api\/v7\/entities\/78be6737-fa94-658d-6bed-c0a28006bd40",
+          "name": "North Bergen, New Jersey"
+        }
+      ],
+      "provider": [
+        {
+          "_type": "Organization",
+          "name": "NJ.com",
+          "image": {
+            "thumbnail": {
+              "contentUrl": "https:\/\/www.bing.com\/th?id=ODF.000jizP0971A7XEtUSSEhw&pid=news"
+            }
+          }
+        }
+      ],
+      "datePublished": "2024-12-23T19:31:00.0000000Z",
+      "video": {
+        "name": "North Bergen tobacco sellers must seek local license under new law taking effect in 2025",
+        "thumbnailUrl": "https:\/\/www.bing.com\/th?id=OVF.MZsjl%2FsbMcCip9QYiZ0WVQ&pid=News",
+        "thumbnail": {
+          "width": 520,
+          "height": 318
+        }
+      }
+    },
+    {
+      "name": "New Iowa vaping law unconstitutionally favors 'Big Tobacco,' retailers claim in new lawsuit",
+      "url": "https:\/\/www.usatoday.com\/story\/news\/crime-and-courts\/2024\/12\/18\/iowa-vaping-law-challenged-lawsuit-big-tobacco\/77071992007\/",
+      "image": {
+        "thumbnail": {
+          "contentUrl": "https:\/\/www.bing.com\/th?id=OVFT.TUZ46vsimJVj5GBdtAAjmC&pid=News",
+          "width": 700,
+          "height": 395
+        }
+      },
+      "description": "Iowa law that bars selling e-cigarette products without FDA approval has exceptions for big tobacco companies' products, suit claims",
+      "about": [
+        {
+          "readLink": "https:\/\/api.bing.microsoft.com\/api\/v7\/entities\/77850824-b07a-487a-af58-37f9949afc27",
+          "name": "Iowa"
+        },
+        {
+          "readLink": "https:\/\/api.bing.microsoft.com\/api\/v7\/entities\/78c51b24-e8ad-7d94-0791-2f6fc5ccf5ca",
+          "name": "Big Tobacco"
+        },
+        {
+          "readLink": "https:\/\/api.bing.microsoft.com\/api\/v7\/entities\/9faf146b-bc63-43c1-a37e-78195321cd89",
+          "name": "Nicotine"
+        }
+      ],
+      "provider": [
+        {
+          "_type": "Organization",
+          "name": "USA Today",
+          "image": {
+            "thumbnail": {
+              "contentUrl": "https:\/\/www.bing.com\/th?id=ODF.m1iod5ODNIyyKu23kGIllQ&pid=news"
+            }
+          }
+        }
+      ],
+      "datePublished": "2024-12-18T21:29:00.0000000Z"
+    },
+    {
+      "name": "New Illinois laws affecting electronic cigarettes go into effect Jan. 1",
+      "url": "https:\/\/www.msn.com\/en-us\/news\/us\/new-illinois-laws-affecting-electronic-cigarettes-go-into-effect-jan-1\/ar-AA1wohe3",
+      "image": {
+        "thumbnail": {
+          "contentUrl": "https:\/\/www.bing.com\/th?id=OVFT.ZgBmZKX9Ja-Dxd6iHto_Yy&pid=News",
+          "width": 700,
+          "height": 393
+        }
+      },
+      "description": "New Illinois laws that go into effect Jan. 1 will place more restrictions on electronic cigarettes. One law prohibits the advertising, marketing or promoting of an electronic cigarette in a manner that is likely to cause a person to mistake it for an object that is anything other than what it is,",
+      "about": [
+        {
+          "readLink": "https:\/\/api.bing.microsoft.com\/api\/v7\/entities\/5eecf9a6-d0a5-7c9c-8942-9f707f667b23",
+          "name": "Electronic cigarette"
+        },
+        {
+          "readLink": "https:\/\/api.bing.microsoft.com\/api\/v7\/entities\/5c12b2f7-e75a-b98f-d89a-a373dde7b193",
+          "name": "Tobacco"
+        },
+        {
+          "readLink": "https:\/\/api.bing.microsoft.com\/api\/v7\/entities\/86da46fc-d681-ec54-b017-53f1c5c0b1b0",
+          "name": "Medicaid"
+        }
+      ],
+      "mentions": [
+        {
+          "name": "Illinois"
+        },
+        {
+          "name": "Electronic cigarette"
+        },
+        {
+          "name": "Coming into force"
+        }
+      ],
+      "provider": [
+        {
+          "_type": "Organization",
+          "name": "The Center Square on MSN.com",
+          "image": {
+            "thumbnail": {
+              "contentUrl": "https:\/\/www.bing.com\/th?id=ODF.pxZB3iVvHntcFGbhYuT8Iw&pid=news"
+            }
+          }
+        }
+      ],
+      "datePublished": "2024-12-23T21:44:00.0000000Z"
+    },
+    {
+      "name": "Denver City Council bans flavored tobacco and nicotine products. Again.",
+      "url": "https:\/\/www.msn.com\/en-us\/news\/us\/denver-city-council-bans-flavored-tobacco-and-nicotine-products-again\/ar-AA1vZpN9",
+      "image": {
+        "thumbnail": {
+          "contentUrl": "https:\/\/www.bing.com\/th?id=OVFT.qIStuobQrsDcPOlXzgmyMC&pid=News",
+          "width": 700,
+          "height": 466
+        }
+      },
+      "description": "The Denver City Council voted Monday to ban sales of nearly all flavored tobacco and nicotine products in city limits.",
+      "about": [
+        {
+          "readLink": "https:\/\/api.bing.microsoft.com\/api\/v7\/entities\/02ae3126-f52b-2c0f-b9d7-e53f96da05aa",
+          "name": "Denver City Council"
+        },
+        {
+          "readLink": "https:\/\/api.bing.microsoft.com\/api\/v7\/entities\/7aa61857-9c4f-420b-96c7-6a51b8f4c1b1",
+          "name": "Michael Hancock"
+        },
+        {
+          "readLink": "https:\/\/api.bing.microsoft.com\/api\/v7\/entities\/a1fbf82b-f88e-4179-8209-33b101a0fdda",
+          "name": "Mike Johnston"
+        },
+        {
+          "readLink": "https:\/\/api.bing.microsoft.com\/api\/v7\/entities\/120a836c-b070-4971-146c-4d70853eca2e",
+          "name": "The Denver Post"
+        },
+        {
+          "readLink": "https:\/\/api.bing.microsoft.com\/api\/v7\/entities\/7b16cc81-2b2c-1a22-8d19-7c0a0164dd89",
+          "name": "Black market"
+        }
+      ],
+      "provider": [
+        {
+          "_type": "Organization",
+          "name": "Denver Post on MSN.com",
+          "image": {
+            "thumbnail": {
+              "contentUrl": "https:\/\/www.bing.com\/th?id=ODF.umiO7znuN3cIozgJRZ72Qg&pid=news"
+            }
+          }
+        }
+      ],
+      "datePublished": "2024-12-17T03:42:00.0000000Z",
+      "category": "Politics"
+    },
+    {
+      "name": "Early adoption of tobacco 21 policies can avert premature mortality, study suggests",
+      "url": "https:\/\/medicalxpress.com\/news\/2024-12-early-tobacco-policies-avert-premature.html",
+      "image": {
+        "thumbnail": {
+          "contentUrl": "https:\/\/www.bing.com\/th?id=OVFT.CMGhWV-QliCo-ZCSKwYkvS&pid=News",
+          "width": 700,
+          "height": 477
+        }
+      },
+      "description": "Early adoption and implementation of Tobacco 21 (T21) policies, with a minimum legal access age for tobacco products of 21 years, is associated with potential premature mortality reductions, according to a study published online Dec.",
+      "about": [
+        {
+          "readLink": "https:\/\/api.bing.microsoft.com\/api\/v7\/entities\/2b6a6ebe-152b-c8ff-5bac-1af6bc163fe7",
+          "name": "Yale School of Public Health"
+        },
+        {
+          "readLink": "https:\/\/api.bing.microsoft.com\/api\/v7\/entities\/20d71553-9d7c-4a1f-99d5-749804a9c44d",
+          "name": "New Haven, Connecticut"
+        },
+        {
+          "readLink": "https:\/\/api.bing.microsoft.com\/api\/v7\/entities\/e16a5fa1-3aee-b88e-ca35-7d5b4297310b",
+          "name": "District of Columbia"
+        },
+        {
+          "readLink": "https:\/\/api.bing.microsoft.com\/api\/v7\/entities\/3009d91d-d582-4c34-85ba-772ba09e5be1",
+          "name": "California"
+        }
+      ],
+      "provider": [
+        {
+          "_type": "Organization",
+          "name": "Medical Xpress",
+          "image": {
+            "thumbnail": {
+              "contentUrl": "https:\/\/www.bing.com\/th?id=ODF.-pywqlb_V9-nHVZlvBEGBQ&pid=news"
+            }
+          }
+        }
+      ],
+      "datePublished": "2024-12-23T14:50:00.0000000Z"
+    },
+    {
+      "name": "Denver's flavored tobacco ban enforcement timeline uncertain",
+      "url": "https:\/\/www.msn.com\/en-us\/news\/us\/denvers-flavored-tobacco-ban-wont-be-enforced-until-2026\/ar-AA1w3VDX",
+      "image": {
+        "thumbnail": {
+          "contentUrl": "https:\/\/www.bing.com\/th?id=OVFT.oU3glXmZwoOHqzf45ttmjS&pid=News",
+          "width": 700,
+          "height": 393
+        }
+      },
+      "description": "The bill will take effect 90 days after the mayor signed it, but enforcement timelines are still being evaluated, the city's health department said.",
+      "about": [
+        {
+          "readLink": "https:\/\/api.bing.microsoft.com\/api\/v7\/entities\/02ae3126-f52b-2c0f-b9d7-e53f96da05aa",
+          "name": "Denver City Council"
+        }
+      ],
+      "provider": [
+        {
+          "_type": "Organization",
+          "name": "KUSA-TV Denver on MSN.com",
+          "image": {
+            "thumbnail": {
+              "contentUrl": "https:\/\/www.bing.com\/th?id=ODF.SZkN8lpKbKUiHHPeXOJnHQ&pid=news"
+            }
+          }
+        }
+      ],
+      "datePublished": "2024-12-24T01:13:00.0000000Z",
+      "category": "Politics"
+    },
+    {
+      "name": "Hendersonville PD list businesses which violated law in sale of alcohol, tobacco to minors",
+      "url": "https:\/\/www.msn.com\/en-us\/health\/medical\/hendersonville-pd-list-businesses-which-violated-law-in-sale-of-alcohol-tobacco-to-minors\/ar-AA1w2i9k",
+      "image": {
+        "thumbnail": {
+          "contentUrl": "https:\/\/www.bing.com\/th?id=OVFT.CtLN_CmVjNpJvtujyNwgSS&pid=News",
+          "width": 700,
+          "height": 394
+        }
+      },
+      "description": "The Hendersonville Police Department (HPD) has issued a list of businesses which were not \"adhering to laws regarding the sale of alcohol",
+      "provider": [
+        {
+          "_type": "Organization",
+          "name": "WZTV - Nashville on MSN.com",
+          "image": {
+            "thumbnail": {
+              "contentUrl": "https:\/\/www.bing.com\/th?id=ODF.czqjOdhsbAfIo7ZM5_ab6g&pid=news"
+            }
+          }
+        }
+      ],
+      "datePublished": "2024-12-17T17:07:36.0000000Z"
+    },
+    {
+      "name": "Why Bangladesh's tobacco control law amendment is crucial",
+      "url": "https:\/\/www.tbsnews.net\/thoughts\/why-bangladeshs-tobacco-control-law-amendment-crucial-1025496",
+      "description": "By taking decisive measures to control tobacco use, Bangladesh can demonstrate its commitment to public health and set an example for other countries in the region",
+      "provider": [
+        {
+          "_type": "Organization",
+          "name": "tbsnews"
+        }
+      ],
+      "datePublished": "2024-12-23T12:11:00.0000000Z",
+      "category": "Health"
+    },
+    {
+      "name": "Tobacco pouch maker Zyn hit with $1.2M fine for violating DC laws",
+      "url": "https:\/\/www.yahoo.com\/news\/tobacco-pouch-maker-zyn-hit-213140656.html",
+      "image": {
+        "thumbnail": {
+          "contentUrl": "https:\/\/www.bing.com\/th?id=OVFT.JDq9kcscJHzYHm0cMikmwC&pid=News",
+          "width": 700,
+          "height": 466
+        }
+      },
+      "description": "Annual compliance reminders to D.C. distributors and retailers regarding the flavor ban and applicable laws. Prohibition of future sales of flavored tobacco products in D.C. through shop.zyn.com or any related e-commerce platforms.",
+      "about": [
+        {
+          "readLink": "https:\/\/api.bing.microsoft.com\/api\/v7\/entities\/9faf146b-bc63-43c1-a37e-78195321cd89",
+          "name": "Nicotine"
+        },
+        {
+          "readLink": "https:\/\/api.bing.microsoft.com\/api\/v7\/entities\/51319150-b8d5-8d6d-26d2-432fd45813d9",
+          "name": "Swedish Match"
+        },
+        {
+          "readLink": "https:\/\/api.bing.microsoft.com\/api\/v7\/entities\/9daa4a8d-0e69-da3a-672e-16d4743a665b",
+          "name": "Stockholm"
+        },
+        {
+          "readLink": "https:\/\/api.bing.microsoft.com\/api\/v7\/entities\/a5928099-53c3-11a8-91e6-6fe59b8c4f9a",
+          "name": "Sweden"
+        },
+        {
+          "readLink": "https:\/\/api.bing.microsoft.com\/api\/v7\/entities\/ce9e79c4-12bb-3eb6-7803-5303961e97c7",
+          "name": "Philip Morris International"
+        }
+      ],
+      "provider": [
+        {
+          "_type": "Organization",
+          "name": "Yahoo"
+        }
+      ],
+      "datePublished": "2024-12-13T21:31:00.0000000Z",
+      "category": "Health"
+    }
+  ]
+}

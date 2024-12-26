@@ -46,7 +46,8 @@ final class BingNewsListCommand extends InvokableServiceCommand
             $table->setHeaders($headers);
             $event = $this->eventDispatcher->dispatch(new RowEvent(type: RowEvent::PRE_ITERATE));
             foreach ($news->getValue() as $article) {
-                $event = $this->eventDispatcher->dispatch(new RowEvent($article));
+                $event = $this->eventDispatcher->dispatch(
+                    new RowEvent($article, searchTerm: $q));
 
                 $row = [
                     $article->getId(),
