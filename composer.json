@@ -15,7 +15,7 @@
         "twig/twig": "^3.15",
         "zenstruck/console-extra": "^1.4",
         "symfony/form": "^7.2",
-        "bing-news-search/bing-news-search": "*@dev"
+        "bing-news-search/bing-news-search": "dev-refactor"
     },
     "require-dev": {
         "phpstan/phpstan": "^2.0",
@@ -43,10 +43,6 @@
         "survos/simple-datatables-bundle": "searchable/sortable tables when browsing"
     },
     "repositories": {
-        "survos_bing_search": {
-            "type": "path",
-            "url": "~/g/tacman/BingNewsSearch"
-        },
         "bing_news": {
             "type": "vcs",
             "url": "git@github.com:tacman/BingNewsSearch.git"
