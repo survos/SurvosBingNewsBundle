@@ -32,6 +32,7 @@ final class BingNewsListCommand extends InvokableServiceCommand
         IO                                                                                          $io,
         #[Option(description: 'filter by top')] bool $top = false,
         #[Option(description: 'search string')] ?string $q=null,
+        #[Option(description: 'category')] ?string $category=null,
         #[Option(description: '2-letter language code')] string $locale='en',
         #[Option(description: 'max to return')] int $limit = 100,
 
@@ -42,16 +43,21 @@ final class BingNewsListCommand extends InvokableServiceCommand
 
             $table = new Table($io);
             $table->setHeaderTitle($q);
-            $headers = ['id', 'Title'];
+            $headers = ['id', 'Title', 'Tags'];
             $table->setHeaders($headers);
             $event = $this->eventDispatcher->dispatch(new RowEvent(type: RowEvent::PRE_ITERATE));
-            foreach ($news->getValue() as $article) {
+            foreach ($news->getValue() as $bingNews) {
                 $event = $this->eventDispatcher->dispatch(
-                    new RowEvent($article, searchTerm: $q));
+                    new RowEvent($bingNews, searchTerm: $q));
 
+                $tags = [];
+                foreach ($bingNews->getAbout() as $bingNewAbout) {
+                    $tags[] = $bingNewAbout['name'];
+                }
                 $row = [
-                    $article->getId(),
-                    $article->getName(),
+                    $bingNews->getId(),
+                    $bingNews->getName(),
+                    join('*', $tags),
                 ];
                 $table->addRow($row);
             }
