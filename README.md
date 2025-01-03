@@ -13,8 +13,8 @@ composer require survos/bing-news-bundle
 composer config repositories.survos_bing_news_bundle '{"type": "path", "url": "../survos/packages/bing-news-bundle"}'
 composer req survos/bing-news-bundle:"*@dev"
 
-composer config repositories.survos_bing_search '{"type": "path", "url": "~/g/tacman/BingNewsSearch"}'
-composer req bing-news-search/bing-news-search:"*@dev"
+composer config repositories.tacman_bing_search '{"type": "path", "url": "~/g/tacman/BingNewsSearch"}'
+composer req tacman/bing-news-search:"*@dev"
 
 ## Resources
 

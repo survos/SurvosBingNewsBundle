@@ -43,7 +43,7 @@ final class BingNewsListCommand extends InvokableServiceCommand
 
             $table = new Table($io);
             $table->setHeaderTitle($q);
-            $headers = ['id', 'Title', 'Tags'];
+            $headers = ['id', 'Title', 'Topic', 'Tags'];
             $table->setHeaders($headers);
             $event = $this->eventDispatcher->dispatch(new RowEvent(type: RowEvent::PRE_ITERATE));
             foreach ($news->getValue() as $bingNews) {
@@ -56,7 +56,8 @@ final class BingNewsListCommand extends InvokableServiceCommand
                 }
                 $row = [
                     $bingNews->getId(),
-                    $bingNews->getName(),
+                    substr($bingNews->getName(), 0, 28),
+                    $bingNews->getCategory(),
                     join('*', $tags),
                 ];
                 $table->addRow($row);

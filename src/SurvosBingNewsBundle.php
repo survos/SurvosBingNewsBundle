@@ -32,6 +32,7 @@ class SurvosBingNewsBundle extends AbstractBundle
         $builder->autowire($serviceId, BingNewsService::class)
             ->setArgument('$apiKey', $config['api_key'])
             ->setArgument('$endpoint', $config['endpoint'])
+            ->setArgument('$cache', new Reference('cache.app'))
             ->setArgument('$cacheTimeout', $config['cache_timeout'])
             ->setAutoconfigured(true)
             ->setAutowired(true)

@@ -39,7 +39,9 @@
             {% endguard %}
         </twig:block>
         <twig:block name="mentions">
-            {{ dump(row.mentions) }}
+            {% guard function dumpo %}
+{#            {{ dump(row.mentions) }}#}
+            {% endguard %}
         </twig:block>
         <twig:block name="provider">
             {% for p in row.provider %}
@@ -49,7 +51,7 @@
         </twig:block>
         <twig:block name="dump">
             {% guard function dump %}
-                {{ dump(row) }}
+{#                {{ dump(row) }}#}
             {% else %}
                 <pre>{{ row|json_encode }}</pre>
             {% endguard %}

@@ -26,46 +26,38 @@ class BingNewsService
 {
 
     public function __construct(
+        private CacheInterface $cache,
         private ?string         $apiKey = null,
         private ?string         $endpoint = null,
         private int             $cacheTimeout = 0,
         private ?Client         $client = null,
-        private ?CacheInterface $cache = null,
     )
     {
-        $this->client = new Client($this->endpoint, $this->apiKey, cache: $cache);
+        $this->client = new Client($this->endpoint, $this->apiKey);
         $this->client->enableExceptions(); // throw exceptions for debug
         $this->client->disableSsl(); // disable Guzzle verification SSL
     }
 
-    public function getByCategory(): iterable
+    public function getByCategory(Category $category, Language $language = Language::EN_US): iterable
     {
         $query = $this->client->category()
-            ->get(Category::BUSINESS(), Language::EN_US())
-            ->setSafeSearch(SafeSearch::OFF());
+            ->get($category, $language)
+            ->setSafeSearch(SafeSearch::OFF);
         return $this->cachedSearch($query);
     }
 
     private function cachedSearch(Request $query)
     {
+        // ack, two caches
         return $query->getApiClient()->request($query);
-        $key = hash('xxh3', serialize($query->getQuery()));
-        $news = $this->cache->get($key, function (ItemInterface $item) use ($query) {
-            $item->expiresAfter($this->cacheTimeout);
-            $request = $query->request();
-            return $request;
-        });
-
-        return $news;
-
-
     }
 
-    public function searchByKeyword(?string $keyword = null, $quantity=100): NewsAnswer
+    public function searchByKeyword(?string $keyword = null, $quantity=100): ?NewsAnswer
     {
+//        dd(SortBy::DATE, Language::EN_US);
         $query = $this->client->search()
             ->get($keyword)
-            ->sortBy(SortBy::DATE())
+//            ->sortBy(SortBy::DATE)
             ->setQuantity($quantity);
         return $this->cachedSearch($query);
     }
