@@ -33,7 +33,7 @@ class BingNewsService
         private ?Client         $client = null,
     )
     {
-        $this->client = new Client($this->endpoint, $this->apiKey);
+        $this->client = new Client($this->apiKey, endpoint: $this->endpoint);
         $this->client->enableExceptions(); // throw exceptions for debug
         $this->client->disableSsl(); // disable Guzzle verification SSL
     }
@@ -48,8 +48,15 @@ class BingNewsService
 
     private function cachedSearch(Request $query)
     {
-        // ack, two caches
-        return $query->getApiClient()->request($query);
+        $key = hash('xxh3', serialize($query->getQuery()));
+        $news = $this->cache->get($key, function (ItemInterface $item) use ($query) {
+            $item->expiresAfter($this->cacheTimeout);
+            $request = $query->request();
+            $newsAnswer = new NewsAnswer(...$request->getResponseData());
+            return $newsAnswer;
+        });
+        return $news;
+//        return $query->getApiClient()->request($query);
     }
 
     public function searchByKeyword(?string $keyword = null, $quantity=100): ?NewsAnswer
