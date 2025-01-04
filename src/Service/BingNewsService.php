@@ -28,12 +28,12 @@ class BingNewsService
     public function __construct(
         private CacheInterface $cache,
         private ?string         $apiKey = null,
-        private ?string         $endpoint = null,
+        protected ?string         $endpoint = null,
         private int             $cacheTimeout = 0,
         private ?Client         $client = null,
     )
     {
-        $this->client = new Client($this->apiKey, endpoint: $this->endpoint);
+        $this->client = new Client($this->apiKey);
         $this->client->enableExceptions(); // throw exceptions for debug
         $this->client->disableSsl(); // disable Guzzle verification SSL
     }
