@@ -33,7 +33,7 @@ class BingNewsService
         private ?Client         $client = null,
     )
     {
-        $this->client = new Client($this->apiKey);
+        $this->client = new Client($this->apiKey, $this->endpoint);
         $this->client->enableExceptions(); // throw exceptions for debug
         $this->client->disableSsl(); // disable Guzzle verification SSL
     }
